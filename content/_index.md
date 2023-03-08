@@ -5,6 +5,15 @@ type: docs
 
 # Showcase Template
 
+## About us
+
+{{< hint info >}}
+**Julio Andrés Rodríguez Fernández**
+[GitHub](https://github.com/jurodriguezf)
+
+Lorem ipsum
+{{< /hint >}}
+
 Welcome to the [gohugo](https://gohugo.io/) template to create rich content [academic reports](https://www.wordy.com/writers-workshop/writing-an-academic-report/) having [p5.js](https://p5js.org/) sketches.
 
 ## Hacking
