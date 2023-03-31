@@ -1,5 +1,5 @@
 ---
-bookCollapseSection: true
+bookFlatSection: true
 ---
 
 # Visual Illusions
