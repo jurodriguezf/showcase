@@ -229,7 +229,11 @@ function drawHud() {
   
   translate(0, 20);
   fill(0, 0, 0);
-  text("'shift' key: accelerate", 0, 0);
+  text("'shift' key: Accelerate", 0, 0);
+
+  translate(0, 20);
+  fill(0, 0, 0);
+  text("'r' key: Reset", 0, 0);
   pop();
 
   easycam.endHUD();
@@ -262,6 +266,16 @@ function keyPressed() {
   const pressedKey = keyMapping[key];
   // Change direction vector when key is pressed
   if (pressedKey) playerDirectionVector = pressedKey;
-  //if (key == "d")console.log(easycam.getState())
-  if (key === 'r') randomizeFoodPosition();
+
+  // Reset game
+  if (key === 'r') {
+    teleportToCenter();
+    randomizeFoodPosition();
+    easycam.setState({  
+        distance: 437, 
+        center:   [0, 0, 0],
+        rotation: [0.92, -0.09, 0.38, -0.03]
+      }
+    );
+  }
 }

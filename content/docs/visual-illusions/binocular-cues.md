@@ -13,7 +13,7 @@ type: docs
 
 Using these components, it is possible to arrange the composition of a work of art in a way similar to how the human eye sees the world. The guiding principle for this technique is that objects that are **closer** to the viewer appear to be **larger**, where objects that are **further** away appear to be **smaller**. In order to accomplish this, the artist places a horizontal line across the surface of the picture, which is known as the “horizon line.” Parallel lines (or orthogonals) then converge as they meet at the vanishing point on the horizon line.
 
-# **Antecedents and previous work**
+# **Background**
 
 In the early 15th century, a Italian architect called Filippo Brunelleschi (1377–1446) invented a way of representing the recession of space, called linear perspective. In Brunelleschi's technique, the lines appear to converge on a single fixed point in the distance. This produces a convincing representation of spatial depth on a two-dimensional surface.
 
