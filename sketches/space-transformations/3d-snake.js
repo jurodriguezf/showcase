@@ -23,7 +23,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(700, 700, WEBGL);
+  createCanvas(600, 600, WEBGL);
   
   easycam = createEasyCam();
   easycam.setState({  
@@ -209,7 +209,7 @@ function drawHud() {
   
   easycam.beginHUD();
   push();
-  translate(590, 20);
+  translate(490, 20);
   fill(0, 0, 0);
   text("Score: " + playerScore, 0, 0);
   pop();
