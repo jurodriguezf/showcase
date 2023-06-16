@@ -1,6 +1,7 @@
 ---
 title: Game Development - 3D Snake Game
 type: docs
+js: https://freshfork.github.io/p5.EasyCam/p5.easycam.js
 ---
 
 # **Introduction**
@@ -17,7 +18,7 @@ dasaddad
 
 ## **P5 Sketch**
 
-{{< p5-iframe sketch="/showcase/sketches/space-transformations/3d-snake.js" width="700" height="700" >}}
+{{< p5-iframe sketch="/showcase/sketches/space-transformations/3d-snake.js" width="630" height="630" >}}
 
 # **Code**
 
