@@ -33,7 +33,7 @@ During the 19th and 20th centuries, researchers and psychologists began conducti
 
 # **Solution**
 
-Here we can observe multiple sketches implementing 3 different common visual illusions:
+Here we can observe 3 sketches implementing different common visual illusions:
 
 ## **Lilac Chaser Illusion**
 
