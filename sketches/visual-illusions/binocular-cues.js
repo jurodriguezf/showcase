@@ -1,5 +1,8 @@
 let mountainHeights = [];
 
+let circles = [];
+const numCircles = 10;
+
 function setup() {
   createCanvas(400, 400);
   background(220);
@@ -9,11 +12,22 @@ function setup() {
   for (let i = 0; i < numMountains; i++) {
     mountainHeights.push(random(height / 2));
   }
+
+  // Initialize circles
+  for (let i = 0; i < numCircles; i++) {
+    circles.push({
+      x: random(width),
+      y: -random(100, 300),
+      radius: random(2, 10),
+      speed: random(1, 5)
+    });
+  }
 }
 
 function draw() {
   let gap = 50
 
+  drawingContext.filter = 'blur(12px)';
   // Sky
   stroke(0, 0, 0, 0);
   fill(155, 200, 215);
@@ -28,6 +42,8 @@ function draw() {
   stroke(0, 0, 0, 0);
   fill(64, 131, 85);
   rect(0, 200, 400, 400);
+
+  drawingContext.filter = 'none';
 
   // Railway
   stroke(0, 0, 0, 0);
@@ -48,28 +64,6 @@ function draw() {
   vertex(x4, y4);
   endShape(CLOSE);
 
-  // Trees
-  fill(88, 117, 86);
-  noStroke();
-  let mountainWidth = 40;
-  let mountainHeight = 50;
-  let mountainSpacing = width / (mountainHeights.length - 1);
-  for (let i = 0; i < mountainHeights.length; i++) {
-    let x = i * mountainSpacing;
-    let y = y3 - mountainHeight - mountainHeights[i];
-    triangle(x, y, x + mountainWidth/2, y + mountainHeight, x - mountainWidth/2, y + mountainHeight);
-  }
-
-  // Tunnel outline
-  stroke(0, 0, 0, 0);
-  fill(50, 50, 50);
-  rect(width/2 - gap - 10, 200, 2*gap + 20, -110, 0, 0, 30, 30);
-
-  // Tunnel
-  stroke(0, 0, 0, 0);
-  fill(30, 30, 30);
-  rect(width/2 - gap, 200, 2*gap, -100, 0, 0, 30, 30);
-
   // Line
   stroke(0, 0, 0, 0);
   fill(180, 180, 180);
@@ -88,4 +82,47 @@ function draw() {
   vertex(tx3, ty3);
   vertex(tx4, ty4);
   endShape(CLOSE);
+
+  drawingContext.filter = 'blur(12px)';
+
+  // Trees
+  fill(88, 117, 86);
+  noStroke();
+  let mountainWidth = 40;
+  let mountainHeight = 50;
+  let mountainSpacing = width / (mountainHeights.length - 1);
+  for (let i = 0; i < mountainHeights.length; i++) {
+    let x = i * mountainSpacing;
+    let y = y3 - mountainHeight - mountainHeights[i];
+    triangle(x, y, x + mountainWidth/2, y + mountainHeight, x - mountainWidth/2, y + mountainHeight);
+  }
+
+  drawingContext.filter = 'blur(3px)';
+
+  // Tunnel outline
+  stroke(0, 0, 0, 0);
+  fill(50, 50, 50);
+  rect(width/2 - gap - 10, 200, 2*gap + 20, -110, 0, 0, 30, 30);
+
+  // Tunnel
+  stroke(0, 0, 0, 0);
+  fill(30, 30, 30);
+  rect(width/2 - gap, 200, 2*gap, -100, 0, 0, 30, 30);
+
+  // Update and display snow
+  for (let i = 0; i < numCircles; i++) {
+    let circle = circles[i];
+    
+    // Update position
+    circle.y += circle.speed;
+    
+    // Reset position
+    if (circle.y > height + circle.radius) {
+      circle.y = -circle.radius;
+    }
+    
+    fill(255);
+    ellipse(circle.x, circle.y, circle.radius * 2);
+  }
+  
 }
